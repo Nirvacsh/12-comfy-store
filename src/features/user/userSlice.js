@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
 
-const getUserFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem('user')) || null
-}
-
 const themes = {
   fantasy: 'fantasy',
   dracula: 'dracula',
 }
+
+const getUserFromLocalStorage = () => {
+  return JSON.parse(localStorage.getItem('user')) || null
+}
+
 const getThemeFromLocalStorage = () => {
   const theme = localStorage.getItem('theme') || themes.fantasy
   document.documentElement.setAttribute('data-theme', theme)
